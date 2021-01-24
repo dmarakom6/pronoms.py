@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 #random french pronouns generator for excersices
 import random
 import os
