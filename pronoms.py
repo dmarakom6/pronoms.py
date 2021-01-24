@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 #random french pronouns generator for excersices
 import random
 import os
@@ -16,17 +18,17 @@ randompronomimp = random.choice(PRONOMS_IMP)
 #combien (de) pronoms
 
 def combienPronoms():
-
-
-    print("\n" * 300)
-    global pronoms
-    pronoms = int(input(("Combien de pronoms?(1,2 ou 3): ")))
-    if pronoms > 0:
-        if pronoms < 4:
-            Temps()
-        else:
-            print('Erreur')
-
+    try:
+        print("\n" * 300)
+        global pronoms
+        pronoms = int(input(("Combien de pronoms?(1,2 ou 3): ")))
+        if pronoms > 0:
+            if pronoms < 4:
+                Temps()
+            else:
+                print('Erreur')
+    except:
+        print("Erreur")
 
 
 #temps
@@ -81,6 +83,9 @@ def Temps():
     if add in ["oui", "o", "OUI", "Oui"]:
         global imperatif
         imperatif = True
+        if subjonctif == True:
+            global touslesdeux
+            touslesdeux = True
         temps.append("Imperatif Present")
         temps.append("Imperatif Passe")
         print("\n" * 300)
@@ -110,219 +115,249 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
         if subjonctif == True:
             temps.remove("Subjonctif Present")
             temps.remove("Subjonctif Passe")
-        
-            for temp in temps:
-                print(f"{temp}: \n{randompronom}")
-                randompronom = random.choice(PRONOMS)
-                print(f'{randompronom}')
-                randompronom = random.choice(PRONOMS)
-                print(f'{randompronom}')
+            for temp in temps:    
+                pronoms = random.sample(PRONOMS, 3)
+                print(f"{temp}:")
+                for pronom in pronoms:
+                    print(f'{pronom}')
                 print()
                 input()
                 print()
-            
-            randompronomsubj = random.choice(PRONOMS_SUBJ)
-            print(f"Subjonctif Present: \n{randompronomsubj}")
-            randompronomsubj = random.choice(PRONOMS_SUBJ)
-            print(f'{randompronomsubj}')
-            randompronomsubj = random.choice(PRONOMS_SUBJ)
-            print(f'{randompronomsubj}')
-            randompronomsubj = random.choice(PRONOMS_SUBJ)
-            print()
-            input()
-            print()
-            print(f"Subjonctif Passe: \n{randompronomsubj}")
-            randompronomsubj = random.choice(PRONOMS_SUBJ)
-            print(f'{randompronomsubj}')
-            randompronomsubj = random.choice(PRONOMS_SUBJ)
-            print(f'{randompronomsubj}')
+                
+            pronomsubj = random.sample(PRONOMS_SUBJ, 3)
+            print(f"Subjonctif Present:")
+            for pronom in pronomsubj:
+                print(f"{pronom}")
             print()
             input()
             print()
 
-            
+            pronomsubj = random.sample(PRONOMS_SUBJ, 3)
+            print(f"Subjonctif Passe:")
+            for pronom in pronomsubj:
+                print(f"{pronom}")
+            print()
+            input()
+            print()
+
         
-        
-        if imperatif == True:
+        elif imperatif == True:
             if subjonctif == False:
                 temps.remove("Imperatif Present")
                 temps.remove("Imperatif Passe")
                 
-                for temp in temps:
-                    randompronom = random.choice(PRONOMS)
-                    print(f"{temp}: \n{randompronom}")
-                    randompronom = random.choice(PRONOMS)
-                    print(f'{randompronom}')
-                    randompronom = random.choice(PRONOMS)
-                    print(f'{randompronom}')
+                for temp in temps:    
+                    pronoms = random.sample(PRONOMS, 3)
+                    print(f"{temp}:")
+                    for pronom in pronoms:
+                        print(f'{pronom}')
                     print()
                     input()
                     print()
             
-                print(f"Imperatif Present: \ntu")
-                print("nous")
-                print("vous")
+            pronomsimp = random.sample(PRONOMS_IMP, 3)
+            print(f"Imperatif Present:")
+            for pronom in pronomsimp:
+                print(f"{pronom}")
+            print()
+            input()
+            print()
+
+            pronomsimp = random.sample(PRONOMS_IMP, 3)
+            print(f"Imperatif Passe:")
+            for pronom in pronomsimp:
+                print(f"{pronom}")
+            print()
+            input()
+            print()
+
+
+        
+        elif subjonctif == False:
+            if imperatif == False:
+                for temp in temps:    
+                    pronoms = random.sample(PRONOMS, 3)
+                    print(f"{temp}:")
+                    for pronom in pronoms:
+                        print(f'{pronom}')
+                    print()
+                    input()
+                    print()
+            
+        elif touslesdeux == True:
+            for temp in temps:
+                pronoms = random.sample(PRONOMS, 3)
+                print(f"{temp}:")
+                for pronom in pronoms:
+                    print(f'{pronom}')
                 print()
                 input()
                 print()
-                print(f"Imperatif Passe: \ntu")
-                print("nous")
-                print("vous")
-                print()
-                input()
-                print()
-
-        else:
-            if subjonctif == False:
-                if imperatif == False:
-                    for temp in temps:
-                        print(f"{temp}: \n{randompronom}")
-                        randompronom = random.choice(PRONOMS)
-                        print(f'{randompronom}')
-                        randompronom = random.choice(PRONOMS)
-                        print(f'{randompronom}')
-                        print()
-                        input()
-                        print()
-
+                
+        
     elif pronoms == 2:
         if subjonctif == True:
             temps.remove("Subjonctif Present")
             temps.remove("Subjonctif Passe")
-        
-            for temp in temps:
-                print(f"{temp}: \n{randompronom}")
-                randompronom = random.choice(PRONOMS)
-                print(f'{randompronom}')
+            for temp in temps:    
+                pronoms = random.sample(PRONOMS, 2)
+                print(f"{temp}:")
+                for pronom in pronoms:
+                    print(f'{pronom}')
                 print()
                 input()
                 print()
-            
-            randompronomsubj = random.choice(PRONOMS_SUBJ)
-            print(f"Subjonctif Present: \n{randompronomsubj}")
-            randompronomsubj = random.choice(PRONOMS_SUBJ)
-            print(f'{randompronomsubj}')
-            print()
-            input()
-            print()
-            print(f"Subjonctif Passe: \n{randompronomsubj}")
-            randompronomsubj = random.choice(PRONOMS_SUBJ)
-            print(f'{randompronomsubj}')
+                
+            pronomsubj = random.sample(PRONOMS_SUBJ, 2)
+            print(f"Subjonctif Present:")
+            for pronom in pronomsubj:
+                print(f"{pronom}")
             print()
             input()
             print()
 
-            
+            pronomsubj = random.sample(PRONOMS_SUBJ, 2)
+            print(f"Subjonctif Passe:")
+            for pronom in pronomsubj:
+                print(f"{pronom}")
+            print()
+            input()
+            print()
+
         
-        
-        if imperatif == True:
+        elif imperatif == True:
             if subjonctif == False:
                 temps.remove("Imperatif Present")
                 temps.remove("Imperatif Passe")
                 
-                for temp in temps:
-                    randompronom = random.choice(PRONOMS)
-                    print(f"{temp}: \n{randompronom}")
-                    randompronom = random.choice(PRONOMS)
-                    print(f'{randompronom}')
+                for temp in temps:    
+                    pronoms = random.sample(PRONOMS, 2)
+                    print(f"{temp}:")
+                    for pronom in pronoms:
+                        print(f'{pronom}')
                     print()
                     input()
                     print()
             
-                print(f"Imperatif Present:")
-                print("tu")
-                print("vous")
+            pronomsimp = random.sample(PRONOMS_IMP, 2)
+            print(f"Imperatif Present:")
+            for pronom in pronomsimp:
+                print(f"{pronom}")
+            print()
+            input()
+            print()
+
+            pronomsimp = random.sample(PRONOMS_IMP, 2)
+            print(f"Imperatif Passe:")
+            for pronom in pronomsimp:
+                print(f"{pronom}")
+            print()
+            input()
+            print()
+        
+        elif subjonctif == False:
+            if imperatif == False:
+                for temp in temps:    
+                    pronoms = random.sample(PRONOMS, 2)
+                    print(f"{temp}:")
+                    for pronom in pronoms:
+                        print(f'{pronom}')
+                    print()
+                    input()
+                    print()
+            
+        elif touslesdeux == True:
+            for temp in temps:
+                pronoms = random.sample(PRONOMS, 2)
+                print(f"{temp}:")
+                for pronom in pronoms:
+                    print(f'{pronom}')
                 print()
                 input()
                 print()
-                print(f"Imperatif Passe: ")
-                print("nous")
-                print("vous")
-                print()
-                input()
-                print()
-
-        else:
-            if subjonctif == False:
-                if imperatif == False:
-                    for temp in temps:
-                        print(f"{temp}: \n{randompronom}")
-                        randompronom = random.choice(PRONOMS)
-                        print(f'{randompronom}')
-                        randompronom = random.choice(PRONOMS)
-                        print(f'{randompronom}')
-                        print()
-                        input()
-                        print()
-
 
     elif pronoms == 1:
         if subjonctif == True:
             temps.remove("Subjonctif Present")
             temps.remove("Subjonctif Passe")
-            for temp in temps:
-                randompronom = random.choice(PRONOMS)
-                print(f"{temp}: \n{randompronom}")
+            for temp in temps:    
+                pronoms = random.sample(PRONOMS, 1)
+                print(f"{temp}:")
+                for pronom in pronoms:
+                    print(f'{pronom}')
                 print()
                 input()
                 print()
-
-            randompronomsubj = random.choice(PRONOMS_SUBJ)
-            print(f"Subjonctif Present: \n{randompronomsubj}")
+                
+            pronomsubj = random.sample(PRONOMS_SUBJ, 1)
+            print(f"Subjonctif Present:")
+            for pronom in pronomsubj:
+                print(f"{pronom}")
             print()
             input()
-            if subjonctif == True:
-                temps.remove("Subjonctif Present")
-                temps.remove("Subjonctif Passe")
-            
-                for temp in temps:
-                    print(f"{temp}: \n{randompronom}")
+            print()
+
+            pronomsubj = random.sample(PRONOMS_SUBJ, 1)
+            print(f"Subjonctif Passe:")
+            for pronom in pronomsubj:
+                print(f"{pronom}")
+            print()
+            input()
+            print()
+
+        
+        elif imperatif == True:
+            if subjonctif == False:
+                temps.remove("Imperatif Present")
+                temps.remove("Imperatif Passe")
+                
+                for temp in temps:    
+                    pronoms = random.sample(PRONOMS, 1)
+                    print(f"{temp}:")
+                    for pronom in pronoms:
+                        print(f'{pronom}')
                     print()
                     input()
                     print()
-                
-                randompronomsubj = random.choice(PRONOMS_SUBJ)
-                print(f"Subjonctif Present: \n{randompronomsubj}")
+            
+            pronomsimp = random.sample(PRONOMS_IMP, 1)
+            print(f"Imperatif Present:")
+            for pronom in pronomsimp:
+                print(f"{pronom}")
+            print()
+            input()
+            print()
+
+            pronomsimp = random.sample(PRONOMS_IMP, 1)
+            print(f"Imperatif Passe:")
+            for pronom in pronomsimp:
+                print(f"{pronom}")
+            print()
+            input()
+            print()
+
+
+        
+        elif subjonctif == False:
+            if imperatif == False:
+                for temp in temps:    
+                    pronoms = random.sample(PRONOMS, 1)
+                    print(f"{temp}:")
+                    for pronom in pronoms:
+                        print(f'{pronom}')
+                    print()
+                    input()
+                    print()
+            
+        elif touslesdeux == True:
+            for temp in temps:
+                pronoms = random.sample(PRONOMS, 1)
+                print(f"{temp}:")
+                for pronom in pronoms:
+                    print(f'{pronom}')
                 print()
                 input()
                 print()
-                print(f"Subjonctif Passe: \n{randompronomsubj}")
-                print()
-                input()
-                print()
-
-            
-            if imperatif == True:
-                if subjonctif == False:
-                    temps.remove("Imperatif Present")
-                    temps.remove("Imperatif Passe")
-                    
-                    for temp in temps:
-                        randompronom = random.choice(PRONOMS)
-                        print(f"{temp}: \n{randompronom}")
-                        print()
-                        input()
-                        print()
-                
-                    print(f"Imperatif Present:")
-                    print("vous")
-                    print()
-                    input()
-                    print()
-                    print(f"Imperatif Passe: ")
-                    print("tu")
-                    print()
-                    input()
-                    print()
-
-            else:
-                if subjonctif == False:
-                    if imperatif == False:
-                        for temp in temps:
-                            print(f"{temp}: \n{randompronom}")
-                            print()
-                            input()
-                            print()
 
         
         
@@ -348,7 +383,6 @@ else:
 input("***Taper sur 'Enter' pour fermer l'application***")
 exit(0)
 
-#AVOID DISPLAYING THE SAME PRONOUN AGAIN 
 
 
 
