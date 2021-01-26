@@ -1,5 +1,6 @@
 #random french pronouns generator for excersices
 import random
+import sys
 import os
 
 global PRONOMS, PRONOMS_SUBJ, PRONOMS_IMP, PRONOUNS, temps
@@ -17,7 +18,7 @@ randompronomimp = random.choice(PRONOMS_IMP)
 
 def combienPronoms():
     try:
-        print("\n" * 300)
+        os.system('cls')
         global pronoms
         pronoms = int(input(("Combien de pronoms?(1,2 ou 3): ")))
         if pronoms > 0:
@@ -32,7 +33,7 @@ def combienPronoms():
 #temps
 
 def Temps():
-    print("\n" * 300)
+    os.system('cls')
     print("Choisir les temps\n")
     print("TEMPS")
     print("*****")
@@ -44,7 +45,7 @@ def Temps():
     if add in ["oui", "o", "OUI", "Oui"]:
         temps.append("Passe Simple")
         temps.append("Passe Anterieur")
-        print("\n" * 300)
+        os.system('cls')
         print("TEMPS")
         print("*****")
         print()
@@ -55,7 +56,7 @@ def Temps():
     if add in ["oui", "o", "OUI", "Oui"]:
         temps.append("Conditionnel Present")
         temps.append("Conditionnel Passe")
-        print("\n" * 300)
+        os.system('cls')
         print("TEMPS")
         print("*****")
         print()
@@ -68,7 +69,7 @@ def Temps():
         subjonctif = True
         temps.append("Subjonctif Present")
         temps.append("Subjonctif Passe")
-        print("\n" * 300)
+        os.system('cls')
         print("TEMPS")
         print("*****")
         print()
@@ -86,7 +87,7 @@ def Temps():
             touslesdeux = True
         temps.append("Imperatif Present")
         temps.append("Imperatif Passe")
-        print("\n" * 300)
+        os.system('cls')
         print("TEMPS")
         print("*****")
         print()
@@ -99,7 +100,7 @@ def Temps():
     print()
     add = input("Commencer l' exercice?[oui/non]: ")
     if add in ["oui", "o", "OUI", "Oui"]:
-        print("\n" * 300)
+        os.system('cls')
         generatePronoms(PRONOMS, randompronom, pronoms, temps)
     else:
         print("ANNULATION")
@@ -119,7 +120,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                 for pronom in pronoms:
                     print(f'{pronom}')
                 print()
-                input()
+                os.system('pause')
                 print()
                 
             pronomsubj = random.sample(PRONOMS_SUBJ, 3)
@@ -127,7 +128,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsubj:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
             pronomsubj = random.sample(PRONOMS_SUBJ, 3)
@@ -135,7 +136,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsubj:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
         
@@ -150,7 +151,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                     for pronom in pronoms:
                         print(f'{pronom}')
                     print()
-                    input()
+                    os.system('pause')
                     print()
             
             pronomsimp = random.sample(PRONOMS_IMP, 3)
@@ -158,7 +159,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsimp:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
             pronomsimp = random.sample(PRONOMS_IMP, 3)
@@ -166,7 +167,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsimp:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
 
@@ -179,7 +180,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                     for pronom in pronoms:
                         print(f'{pronom}')
                     print()
-                    input()
+                    os.system('pause')
                     print()
             
         elif touslesdeux == True:
@@ -189,7 +190,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                 for pronom in pronoms:
                     print(f'{pronom}')
                 print()
-                input()
+                os.system('pause')
                 print()
                 
         
@@ -203,7 +204,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                 for pronom in pronoms:
                     print(f'{pronom}')
                 print()
-                input()
+                os.system('pause')
                 print()
                 
             pronomsubj = random.sample(PRONOMS_SUBJ, 2)
@@ -211,7 +212,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsubj:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
             pronomsubj = random.sample(PRONOMS_SUBJ, 2)
@@ -219,7 +220,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsubj:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
         
@@ -234,7 +235,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                     for pronom in pronoms:
                         print(f'{pronom}')
                     print()
-                    input()
+                    os.system('pause')
                     print()
             
             pronomsimp = random.sample(PRONOMS_IMP, 2)
@@ -242,7 +243,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsimp:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
             pronomsimp = random.sample(PRONOMS_IMP, 2)
@@ -250,7 +251,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsimp:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
         
         elif subjonctif == False:
@@ -261,7 +262,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                     for pronom in pronoms:
                         print(f'{pronom}')
                     print()
-                    input()
+                    os.system('pause')
                     print()
             
         elif touslesdeux == True:
@@ -271,7 +272,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                 for pronom in pronoms:
                     print(f'{pronom}')
                 print()
-                input()
+                os.system('pause')
                 print()
 
     elif pronoms == 1:
@@ -284,7 +285,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                 for pronom in pronoms:
                     print(f'{pronom}')
                 print()
-                input()
+                os.system('pause')
                 print()
                 
             pronomsubj = random.sample(PRONOMS_SUBJ, 1)
@@ -292,7 +293,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsubj:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
             pronomsubj = random.sample(PRONOMS_SUBJ, 1)
@@ -300,7 +301,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsubj:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
         
@@ -315,7 +316,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                     for pronom in pronoms:
                         print(f'{pronom}')
                     print()
-                    input()
+                    os.system('pause')
                     print()
             
             pronomsimp = random.sample(PRONOMS_IMP, 1)
@@ -323,7 +324,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsimp:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
             pronomsimp = random.sample(PRONOMS_IMP, 1)
@@ -331,7 +332,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
             for pronom in pronomsimp:
                 print(f"{pronom}")
             print()
-            input()
+            os.system('pause')
             print()
 
 
@@ -344,7 +345,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                     for pronom in pronoms:
                         print(f'{pronom}')
                     print()
-                    input()
+                    os.system('pause')
                     print()
             
         elif touslesdeux == True:
@@ -354,7 +355,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
                 for pronom in pronoms:
                     print(f'{pronom}')
                 print()
-                input()
+                os.system('pause')
                 print()
 
         
@@ -365,7 +366,7 @@ def generatePronoms(PRONOMS, randompronom, pronoms, temps):
 #main
 
 print("PRONOMS GENERATEUR v.1.0")
-print("-------------------------------------------\n")
+print("------------------------\n")
 
 commencer = input("Commencer?[oui/non]: ")
 if commencer in ["oui", "o", "OUI", "Oui"]:
